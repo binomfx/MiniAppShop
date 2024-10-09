@@ -100,9 +100,9 @@
         	Выберите рубрику:<br>  
 		<select id="rubrica" name="rubrica"></select>
 		<script>
-			d_rubricator.forEach(function(item, i, d_rubricator) {
-				rubrica.append(new Option(item, String(i)));
-			});
+			for (let i of d_rubricator.keys()) {
+				rubrica.append(new Option(d_rubricator[i], String(i)));
+			}
 		</script>
 
 	</p>
