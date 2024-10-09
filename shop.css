@@ -76,7 +76,7 @@
 .card__price--common {
   font-weight: 400;
   font-size: 17px;
-  color: #606060;
+  color: var(--tg-theme-text-color);
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: flex-end;
@@ -86,7 +86,7 @@
   content: "Цена";
   font-weight: 400;
   font-size: 13px;
-  color: #bfbfbf;
+  color: var(--tg-theme-text-color);
 }
 
 .card__title {
