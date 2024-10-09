@@ -7,6 +7,7 @@
   border-radius: 4px;
   transition: 0.2s;
   position: relative;
+  background: var(--tg-theme-bg-color);
 }
 
 /* При наведении на карточку - меняем цвет тени */
