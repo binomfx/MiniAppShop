@@ -16,10 +16,11 @@
 			.then(response => response.json())
 			.then(jsonData => {
 				d_rubricator = jsonData;
-			});
 		console.log("d_rubricator[1]= " + d_rubricator[1]); 
 		l = Object.keys(d_rubricator).length;
 		console.log("l= " + l); 
+			});
+
 		for (let i = 1; i < l; i++) {
 			rubrica.append(new Option(d_rubricator[i], String(i)));
 		}
