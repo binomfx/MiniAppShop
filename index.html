@@ -30,8 +30,9 @@
   			.then(response => response.json())
   			.then(jsonData => {
 				d_rubricator = jsonData;
+				console.log("0) d_rubricator[1]= " + d_rubricator[1]);
 			});
-		console.log("1) d_rubricator[1]= " + d_rubricator[5]);
+		console.log("1) d_rubricator[5]= " + d_rubricator[5]);
 		
 		const tg = window.Telegram.WebApp;
 		//telegramInitData = tg.initData;
