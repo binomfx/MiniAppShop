@@ -30,7 +30,8 @@
   			.then(response => response.json())
   			.then(jsonData => {
 				d_rubricator = jsonData;
-			}); 
+			});
+		console.log("d_rubricator1= " + d_rubricator);
 		
 		const tg = window.Telegram.WebApp;
 		//telegramInitData = tg.initData;
@@ -100,6 +101,7 @@
         	Выберите рубрику:<br>  
 		<select id="rubrica" name="rubrica"></select>
 		<script>
+			console.log("d_rubricator2= " + d_rubricator);
 			l = Object.keys(d_rubricator).length;
 			console.log("l= " + l); 
 			for (let i = 1; i < l; i++) {
