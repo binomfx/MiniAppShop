@@ -30,7 +30,7 @@
 				l = Object.keys(d_catalog).length;
 				for (let i = 1; i <= l; i++) {
 					console.log("i="+i);
-					console.log("Наименование="+d_catalog[i].key);
+					console.log("Наименование="+JSON.parse(d_catalog[i]));
 					//rubrica.append(new Option(d_rubricator[i], String(i)));
 				}
 			});
