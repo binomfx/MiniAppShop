@@ -73,22 +73,6 @@
   margin-left: 4px;
   position: relative;
 }
-
-.card__price--discount {
-  font-weight: 700;
-  font-size: 19px;
-  color: #414141;
-  display: flex;
-  flex-wrap: wrap-reverse;
-}
-
-.card__price--discount::before {
-  content: "Со скидкой";
-  font-weight: 400;
-  font-size: 13px;
-  color: #bfbfbf;
-}
-
 .card__price--common {
   font-weight: 400;
   font-size: 17px;
