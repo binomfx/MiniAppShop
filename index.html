@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<meta charset="UTF-8">    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+	<title>Магазин знаний для LLM</title>
+	<link rel="stylesheet" href="miniapp.css" type="text/css" media="all">
+</head>
+	
+<body>
+
+	<script>
+		// Загрузить файлы JSON
+		fetch('help.json')
+ 			.then(response => response.json())
+  			.then(jsonData => {
+				let d_help = jsonData;
+				document.getElementById('hlp1').innerHTML = d_help[1];
+				document.getElementById('hlp2').innerHTML = d_help[2];
+				document.getElementById('hlp3').innerHTML = d_help[3];
+				document.getElementById('hlp4').innerHTML = d_help[4];
+				document.getElementById('hlp5').innerHTML = d_help[5];
+				document.getElementById('hlp6').innerHTML = d_help[6];
+			}); 
+
+//		d_constructor = {};
+//		fetch('constructor.json')
+//  			.then(response => response.json())
+//  			.then(jsonData => {
+//				d_constructor = jsonData; //JSON.parse(jsonData);
+//			}); 
+		
+		const tg = window.Telegram.WebApp;
+
+		//telegramInitData = tg.initData;
+		//tg.showAlert(decodeURIComponent(telegramInitData));
+/*
+		const verifyTelegramWebAppData = (telegramInitData: string) => {
+			  // The data is a query string, which is composed of a series of field-value pairs.
+			  const encoded = decodeURIComponent(telegramInitData);
+
+			  // HMAC-SHA-256 signature of the bot's token with the constant string WebAppData used as a key.
+			  const secret = crypto.createHmac("sha256", "WebAppData").update(botToken);
+
+			  // Data-check-string is a chain of all received fields'.
+			  const arr = encoded.split("&");
+			  const hashIndex = arr.findIndex((str) => str.startsWith("hash="));
+			  const hash = arr.splice(hashIndex)[0].split("=")[1];
+			  // Sorted alphabetically
+			  arr.sort((a, b) => a.localeCompare(b));
+			  // In the format key=<value> with a line feed character ('\n', 0x0A) used as separator
+			  // e.g., 'auth_date=<auth_date>\nquery_id=<query_id>\nuser=<user>
+			const dataCheckString = arr.join("\n");
+
+	  		// The hexadecimal representation of the HMAC-SHA-256 signature of the data-check-string with the secret key
+  			const _hash = crypto
+  			  .createHmac("sha256", secret.digest())
+  			  .update(dataCheckString)
+  			  .digest("hex");
+
+  			// If hash is equal, the data may be used on your server.
+	  		// Complex data types are represented as JSON-serialized objects.
+  			return _hash === hash;
+		};
+
+		if (!verifyTelegramWebAppData) {
+			tg.close();
+		}
+*/
+
+		tg.ready();
+		tg.isExpanded;
+		tg.expand();
+		tg.MainButton.setText("ПОМОГИ");
+		tg.MainButton.onClick(() => {     
+			sendAppData();
+		});
+		tg.MainButton.show();
+
+
+		function sendAppData() {
+/*			newPrompt = "";
+			if (document.getElementById('tab1').checked) { // Ручной ввод
+				newPrompt = document.getElementById('prompt1').value;
+			} else if (document.getElementById('tab2').checked) { // Конструктор
+				s_role = document.getElementById('role').value;
+				s_task = document.getElementById('task').value;
+				s_task2 = document.getElementById('task2').value;
+				s_format = document.getElementById('format').value;
+				s_style = document.getElementById('style1').value;
+				newPrompt = d_constructor[1] + s_role + d_constructor[2] + s_task + " " + s_task2 + d_constructor[3] + s_format + d_constructor[4] + s_style + d_constructor[5];
+			} else if (document.getElementById('tab3').checked) { // Шаблон
+				i_template = document.getElementById('template').value;
+				newPrompt = d_templates[i_template];
+			} else {
+				tg.close();
+			}
+			tg.sendData(newPrompt);
+*/
+			tg.sendData("Данные из приложения.");
+  		}
+		
+</script>
+
+<!------------------------------------Вкладки (tabs)---------------------------------------->
+	
+<h1>Магазин знаний</h1>
+<main>
+  
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">Главная</label>
+    
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">Каталог</label>
+    
+  <input id="tab3" type="radio" name="tabs">
+  <label for="tab3">Корзина</label>
+
+  <input id="tab4" type="radio" name="tabs">
+  <label for="tab4">Справка</label>
+    
+  <section id="content1">
+      			<h2>Векторизованные знания из учебников и книг</h2>
+	  		<p></p>
+			<p>
+				Новинки:
+			</p>
+  </section>
+    
+  <section id="content2">
+      			<h2>Рубрики:</h2>
+			<p>
+        Выберите одну или несколько рубрик:  
+      </p>
+	  	<p>
+				Список баз знаний:<br>
+				----------------------
+ 			</p>
+  </section>
+    
+  <section id="content3">
+      			<h2>Корзина:</h2>
+			<p></p>
+  		<p>
+				Список книг в корзине<br>
+				----------------------
+			</p>
+  </section>
+
+  <section id="content4">
+      			<h2>Справка</h2>
+	  		<p></p>
+			<p id=hlp1></p>
+			<p id=hlp2></p>
+			<p id=hlp3></p>
+			<p id=hlp4></p>
+			<p id=hlp5></p>
+			<p id=hlp6></p>
+  </section>
+
+</main>
+	
+</body>
+</html>
