@@ -17,7 +17,7 @@
 			.then(jsonData => {
 				d_rubricator = jsonData;
 				l = Object.keys(d_rubricator).length;
-				for (let i = 1; i < l; i++) {
+				for (let i = 1; i <= l; i++) {
 					rubrica.append(new Option(d_rubricator[i], String(i)));
 				}
 			});
@@ -27,8 +27,9 @@
 			.then(response => response.json())
 			.then(jsonData => {
 				d_catalog = jsonData;
-				l = Object.keys(d_rubricator).length;
-				for (let i = 1; i < l; i++) {
+				l = Object.keys(d_catalog).length;
+				for (let i = 1; i <= l; i++) {
+					console.log("i="+i);
 					console.log("Наименование="+d_catalog[i]);
 					//rubrica.append(new Option(d_rubricator[i], String(i)));
 				}
