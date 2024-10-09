@@ -16,7 +16,7 @@
 }
 
 .card__top {
-  flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+  flex: 0 0 110px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
   position: relative;
   overflow: hidden; /* Скрываем, что выходит за пределы */
 }
@@ -92,9 +92,9 @@
 
 .card__add {
   display: block;
-  width: 50%;
+  width: 100%;
   font-weight: 400;
-  font-size: 8px;
+  font-size: 10px;
   color: var(--tg-theme-text-color);
   padding: 10px;
   text-align: center;
