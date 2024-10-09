@@ -83,7 +83,7 @@
 }
 
 .card__price--common::before {
-  content: "Обычная";
+  content: "Цена";
   font-weight: 400;
   font-size: 13px;
   color: #bfbfbf;
