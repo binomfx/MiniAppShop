@@ -22,6 +22,19 @@
 				}
 			});
 
+		d_catalog = {};
+		fetch('vbases.json')
+			.then(response => response.json())
+			.then(jsonData => {
+				d_catalog = jsonData;
+				l = Object.keys(d_rubricator).length;
+				for (let i = 1; i < l; i++) {
+					console.log("Наименование="+d_catalog[i]);
+					//rubrica.append(new Option(d_rubricator[i], String(i)));
+				}
+			});
+
+		
 		fetch('help.json')
  			.then(response => response.json())
 	  		.then(jsonData => {
